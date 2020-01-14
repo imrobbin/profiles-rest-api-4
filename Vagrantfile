@@ -69,11 +69,14 @@ Vagrant.configure("2") do |config|
     # Set Ubuntu Language
     sudo locale-gen en_GB.UTF-8
     # Install Python, SQLite and pip
-    sudo apt-get install -y python3-dev sqlite python3-pip
+    # sudo apt-get install -y python3-dev sqlite python3-pip
     # Upgrade pip to the latest version.
-    sudo pip install --upgrade pip
+    # sudo pip install --upgrade pip
     # Install and configure python virtualenv.
-    sudo pip install virtualenv
+    # pip install virtualenv
+    # virtualenv --no-site-packages profiles_api_4 --always-copy
+
+    # to remove or delete --  dir sudo rm -rf venv
     if ! grep -q VIRTUALENV_ALREADY_ADDED /home/ubuntu/.bashrc; then
         echo "# VIRTUALENV_ALREADY_ADDED" >> /home/ubuntu/.bashrc
         echo "WORKON_HOME=~/.virtualenvs" >> /home/ubuntu/.bashrc
