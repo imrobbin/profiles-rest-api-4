@@ -5,6 +5,7 @@ from django.contrib.auth.models import BaseUserManager
 
 # Create your models here.
 
+
 class UserProfileManager(BaseUserManager):
     """Help Django to work with our custom user model."""
 
@@ -34,6 +35,7 @@ class UserProfileManager(BaseUserManager):
 
         return user
 
+
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Represent an user profile inside our system"""
 
@@ -48,6 +50,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['name']
 
     """Some helper functions"""
+
     def get_full_name(self):
         """Used to get a users fill name."""
 
@@ -62,6 +65,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         """Django uses this when it needs to convert the object into a string."""
 
         return self.email
+
 
 class ProfileFeedItem(models.Model):
     """Profile status update."""
